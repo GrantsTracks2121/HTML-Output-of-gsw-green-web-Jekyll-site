@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="WikilinksDouble bracketed links are converted to Jekyll-ingestible Markdown formatting by the bidirectional_links_generator.rb plugin. However, Obsidian's Wi...">
+
+  <meta property="og:site_name" content="Sparks in the Dark">
+
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥬</text></svg>">
+  
+
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  
+  <meta property="og:description" content="WikilinksDouble bracketed links are converted to Jekyll-ingestible Markdown formatting by the bidirectional_links_generator.rb plugin. However, Obsidian's Wi...">
+  
+
+  
+  <meta property="og:title" content="Wiki image link testing">
+  <meta property="og:type" content="article">
+  
+
+  
+  <meta property="article:published_time" content="2022-10-27T21:12:50-06:00">
+  <meta property="article:author" content="https://garden.megu.space/">
+  
+
+  
+  <meta property="og:url" content="https://garden.megu.space/wiki-image-link-testing.html">
+  
+
+  
+
+  <title>
+    
+    Wiki image link testing &mdash; Sparks in the Dark
+    
+  </title>
+</head>
+
+
+<body>
+  <nav><div>
+<!-- Header added by GSW from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_responsive_header -->
+<div class="header">
+  <a href="#default" class="logo">CompanyLogo</a>
+  <div class="header-right">
+    <a class="active" href="index.html">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+  <a class="internal-link" href="/"><b>Sparks in the Dark</b></a>
+</div></nav>
+  <main><article>
+    <h1>Wiki image link testing</h1>
+    <header><p><time datetime="2022-10-27T12:33:16-06:00">Last updated October 27, 2022</time> &ndash; Development</p></header>
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="wikilinks">Wikilinks</h1>
+<p>Double bracketed links are converted to Jekyll-ingestible Markdown formatting by the <code class="language-plaintext highlighter-rouge">bidirectional_links_generator.rb</code> plugin. However, Obsidian's Wikilink setting also applies to a proprietary image embed format with double brackets.</p>
+
+<p>I'm working on another plugin to complement the bidirectional link generator and resolve Obsidian image embeds automatically. This page is for testing the efficacy of the script and the regex I'm using.</p>
+
+<p>This is a useful reference for <a href="https://ruby-doc.org/core-3.0.1/doc/regexp_rdoc.html" target="blank">Regex in Ruby</a> and this is a good <a href="https://rubular.com/" target="blank">Ruby Regex Tester</a>.</p>
+
+<h1 id="version-1">Version 1</h1>
+<ul>
+  <li>Does not support <code class="language-plaintext highlighter-rouge">"title"</code> in Markdown links because I couldn't figure out the regex
+    <ul>
+      <li>Example:  <code class="language-plaintext highlighter-rouge">![Alt text](tom-wheatley-HdIb-5gRv7U-unsplash 1.jpg "a title")</code>
+</li>
+      <li>If you use these, the image will break</li>
+    </ul>
+  </li>
+  <li>Fixed the problem with links rendering inside <code class="language-plaintext highlighter-rouge">[[code blocks]]</code>
+</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>But it doesn't work in this [[type of block]] because of the extra linebreaks and characters before the tick marks
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Is this also a code block oh shit
+</code></pre></div></div>
+
+<h1 id="version-2">Version 2</h1>
+<p>I DID A GOOD REGEX!</p>
+<ul>
+  <li>Code blocks can contain <code class="language-plaintext highlighter-rouge">[[brackets]]</code> without rendering links!</li>
+  <li>Markdown images contain <code class="language-plaintext highlighter-rouge">title</code> now!
+    <ul>
+      <li>
+<strong>Update:</strong> Regex is faulty. When title exists, the asset path picks up the space before the <code class="language-plaintext highlighter-rouge">"</code>. Will fix later.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Edits:</p>
+<ul>
+  <li>New plugin called <code class="language-plaintext highlighter-rouge">obsidian_images_generator.rb</code> with higher priority than the bidirectional links generator</li>
+  <li>Edited bidirectional links generator to exclude codeblocks</li>
+</ul>
+
+<p>For those of you who would like to know, this is the regex I added to the end of each section in the generator:</p>
+<pre><code class="language-(">
+## Helpful References
+- https://github.com/github/cmark-gfm/blob/master/src/scanners.re
+- https://github.com/jeffreytse/jekyll-spaceship/blob/master/lib/jekyll-spaceship/processors/element-processor.rb
+- https://jekyllrb.com/docs/plugins/generators/
+- https://stackoverflow.com/questions/45279912/select-all-code-in-md-codeblock
+
+It works! Now you can drag and drop images to Obsidian editor and the asset path will automatically generate. Make sure to follow guidelines in &lt;a class='internal-link' href='/obsidian-setup.html'&gt;Obsidian Setup&lt;/a&gt;
+
+# Version 3
+_In Progress_
+
+## Title Problem
+- Turns out `title` is still broken, I didn't actually fix it
+
+## HTML Problem
+- Creating HTML such as `&lt;figure&gt;` breaks Markdown images inside the tags because Markdown ignores syntax inside HTML tags
+- This isn't a problem for Obsidian style embeds because my generator converts them to HTML
+- However, this is a problem for traditional Markdown syntax, especially if you want to have things like `--` converted to an en dash automatically inside a `&lt;figcaption&gt;`
+- Solution I'm working on: Utilizing [Obsidian Comment Syntax](https://help.obsidian.md/How+to/Format+your+notes#Comments) to create a way to add HTML tags that don't show up in Obsidian Preview.
+
+## Solution
+- According to the [Github Flavored Markdown Docs](https://github.github.com/gfm/#html-blocks), Markdown will not be rendered in HTML blocks **UNLESS:**
+	- HTML and Markdown are all on one line
+	- HTML start and end tag have a line break between them and Markdown content
+	- I verified that this works by adding line breaks in Obsidian. Now I don't have to rewrite Markdown image parsers from scratch anymore!! 😭🙏
+
+Now the only problem is the `assets/images` path when converting Obsidian embeds to Markdown embeds. Will the obsidian image generator run before the Markdown parser? Let's see!
+
+**I DID IT!!**
+
+That was pretty difficult BUT with the new version of the images generator, you have to be careful to add line breaks when working with Markdown embeds inside HTML elements:
+
+</code></pre>
+<figure>
+
+<img src="/assets/images/inspector.png%20" alt="alt text" title="Browser as design tool">
+
+</figure>
+<p>```</p>
+
+<p>When Markdown embeds don't render, try adding line breaks before and after and it might work! What the image generator does is insert <code class="language-plaintext highlighter-rouge">assets/images</code> in the file path when it doesn't exist already. Now you can drag + drop images to Obsidian without worrying about asset paths!</p>
+
+<h1 id="testing">Testing</h1>
+<p><img src="/assets/images/tom-wheatley-HdIb-5gRv7U-unsplash1.jpg"></p>
+
+<p>This image is in a Markdown link to nowhere and also has a title
+<a href="https://URL" target="blank"><img src="/assets/images/tom-wheatley-HdIb-5gRv7U-unsplash%201.jpg%20" alt="Image alt text" title="a title"></a></p>
+
+<p>Using the note <code class="language-plaintext highlighter-rouge">title</code> variable: <a class="internal-link" href="/cats.html">a note about cats</a>. Using the note's filename: <a class="internal-link" href="/cats.html">cats</a>. Using the note's title, with a label: <a class="internal-link" href="/cats.html">link to the note about cats using the note title</a>. Using the note's filename, with a label: <a class="internal-link" href="/cats.html">link to the note about cats using the note's filename</a>. In all cases, if the double-bracket link does not point to a valid note, the double brackets will still be shown, like this:<span title="There is no note that matches this link." class="invalid-link">
+  <span class="invalid-link-brackets">[[</span>
+  there is no note that matches this link
+  <span class="invalid-link-brackets">]]</span></span>. This is an Obsidian Image. <img src="/assets/images/tom-wheatley-HdIb-5gRv7U-unsplash1.jpg">. This is a Markdown image with alt text only. <img src="/assets/images/tom-wheatley-HdIb-5gRv7U-unsplash%201.jpg" alt="Alt text" title="">. This is a Markdown image without alt text but with a title. <img src="/assets/images/tom-wheatley-HdIb-5gRv7U-unsplash%201.jpg%20" alt="" title="a title">. This is an Obsidian image that links to the assets folder. <img src="/assets/images/tom-wheatley-HdIb-5gRv7U-unsplash1.jpg">. And another with a slash. <img src="/assets/images/tom-wheatley-HdIb-5gRv7U-unsplash1.jpg"></p>
+</body></html>
+
+</article>
+<aside>
+  <h5>Notes mentioning this note</h5>
+  
+    
+    <div class="backlink-box">
+      <a class="internal-link" href="/obsidian-setup.html">Obsidian setup</a>
+      <p>Vault
+Open new folder as vault and select the main digital garden folder.
+</p>
+    </div>
+    
+  
+</aside>
+<hr>
+<p><time datetime="2022-10-27T12:33:16-06:00">Last updated October 27, 2022</time></p>
+<!-- visual graph section
+<section></section>
+ -->
+</main>
+  <footer><p>This is the footer. Here's the <a class="internal-link" href="about.html">About</a> page and the <a class="internal-link" href="archive.html">Archive</a>.</p>
+</footer>
+
+  <!-- That file is not particularly elegant. This will need a refactor at some point. -->
+<style>
+  content a.internal-link {
+    border-color: #8b88e6;
+    background-color: #efefff;
+  }
+
+  #tooltip-wrapper {
+    background: white;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    font-size: 0.8em;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 100ms;
+  }
+
+  #tooltip-wrapper:after {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		pointer-events: none;
+		background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+		width: 100%;
+		height: 75px;
+  }
+</style>
+
+<div style="opacity: 0; display: none;" id='tooltip-wrapper'>
+  <div id='tooltip-content'>
+  </div>
+</div>
+
+<iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src="">
+</iframe>
+
+<script>
+  var opacityTimeout;
+  var contentTimeout;
+  var transitionDurationMs = 100;
+
+  var iframe = document.getElementById('link-preview-iframe')
+  var tooltipWrapper = document.getElementById('tooltip-wrapper')
+  var tooltipContent = document.getElementById('tooltip-content')
+
+  function hideTooltip() {
+    opacityTimeout = setTimeout(function() {
+      tooltipWrapper.style.opacity = 0;
+      contentTimeout = setTimeout(function() {
+        tooltipContent.innerHTML = '';
+        tooltipWrapper.style.display = 'none';
+      }, transitionDurationMs + 1);
+    }, transitionDurationMs)
+  }
+
+  function showTooltip(event) {
+    var elem = event.target;
+    var elem_props = elem.getClientRects()[elem.getClientRects().length - 1];
+    var top = window.pageYOffset || document.documentElement.scrollTop
+
+    if (event.target.host === window.location.host) {
+      iframe.src = event.target.href
+      iframe.onload = function() {
+        tooltipContentHtml = ''
+        tooltipContentHtml += '<div style="font-weight: bold;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
+        tooltipContentHtml += iframe.contentWindow.document.querySelector('content').innerHTML
+
+        tooltipContent.innerHTML = tooltipContentHtml
+
+        tooltipWrapper.style.display = 'block';
+        setTimeout(function() {
+          tooltipWrapper.style.opacity = 1;
+        }, 1)
+      }
+
+      tooltipWrapper.style.left = elem_props.left - (tooltipWrapper.offsetWidth / 2) + (elem_props.width / 2) + "px";
+      if ((window.innerHeight - elem_props.top) < (tooltipWrapper.offsetHeight)) {
+          tooltipWrapper.style.top = elem_props.top + top - tooltipWrapper.offsetHeight - 10 + "px";
+      } else if ((window.innerHeight - elem_props.top) > (tooltipWrapper.offsetHeight)) {
+          tooltipWrapper.style.top = elem_props.top + top + 35 + "px";
+      }
+
+      if ((elem_props.left + (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+          tooltipWrapper.style.left = "10px";
+      } else if ((document.body.clientWidth - elem_props.left - (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+          tooltipWrapper.style.left = document.body.clientWidth - tooltipWrapper.offsetWidth - 20 + "px";
+      }
+    }
+  }
+
+  function setupListeners(linkElement) {
+    linkElement.addEventListener('mouseleave', function(_event) {
+      hideTooltip();
+    });
+
+    tooltipWrapper.addEventListener('mouseleave', function(_event) {
+      hideTooltip();
+    });
+
+    linkElement.addEventListener('mouseenter', function(event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+      showTooltip(event);
+    });
+
+    tooltipWrapper.addEventListener('mouseenter', function(event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+    });
+  }
+
+  document.querySelectorAll('content a').forEach(setupListeners);
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Welcome!This is your first note. You'll find it in the _notes/ directory. I recommend using Obsidian to edit Markdown files. Learn more about [[Obsidian Setu...">
+
+  <meta property="og:site_name" content="Sparks in the Dark">
+
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥬</text></svg>">
+  
+
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  
+  <meta property="og:description" content="Welcome!This is your first note. You'll find it in the _notes/ directory. I recommend using Obsidian to edit Markdown files. Learn more about [[Obsidian Setu...">
+  
+
+  
+  <meta property="og:title" content="Your first seed">
+  <meta property="og:type" content="article">
+  
+
+  
+  <meta property="article:published_time" content="2022-10-27T21:12:50-06:00">
+  <meta property="article:author" content="https://garden.megu.space/">
+  
+
+  
+  <meta property="og:url" content="https://garden.megu.space/your-first-note.html">
+  
+
+  
+
+  <title>
+    
+    Your first seed &mdash; Sparks in the Dark
+    
+  </title>
+</head>
+
+
+<body>
+  <nav><div>
+<!-- Header added by GSW from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_responsive_header -->
+<div class="header">
+  <a href="#default" class="logo">CompanyLogo</a>
+  <div class="header-right">
+    <a class="active" href="index.html">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+  <a class="internal-link" href="/"><b>Sparks in the Dark</b></a>
+</div></nav>
+  <main><article>
+    <h1>Your first seed</h1>
+    <header><p><time datetime="2022-10-27T20:01:27-06:00">Last updated October 27, 2022</time> &ndash; Getting Started</p></header>
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h2 id="welcome">Welcome!</h2>
+<p>This is your first note. You'll find it in the <code class="language-plaintext highlighter-rouge">_notes/</code> directory. I recommend using <a href="https://obsidian.md/" target="blank">Obsidian</a> to edit Markdown files. Learn more about <a class="internal-link" href="/obsidian-setup.html">Obsidian Setup</a>, <a class="internal-link" href="/site-organization.html">Site Organization</a>, and <a class="internal-link" href="/note-formatting.html">Note Formatting</a>.</p>
+
+<h2 id="this-is-grants-new--space">This is Grant's New  Space</h2>
+<p><a class="internal-link" href="/gsw-s-new-note.html">GSW's New Note</a>
+<a class="internal-link" href="/there-s-a-new-page-on-the-block.html">There's a New Page on the Block</a></p>
+
+<h3 id="link-syntax">Link syntax</h3>
+
+<p>To link to another note, you can use multiple syntaxes. The following four use the "double-bracket" notation (<a href="https://github.com/maximevaillancourt/digital-garden-jekyll-template/blob/master/_notes/your-first-note.md#link-syntax" target="blank">view the Markdown source file</a> to see the underlying syntax).</p>
+
+<ul>
+  <li>Using the note <code class="language-plaintext highlighter-rouge">title</code> variable: <a class="internal-link" href="/cats.html">a note about cats</a>
+</li>
+  <li>Using the note's filename: <a class="internal-link" href="/cats.html">cats</a>
+</li>
+  <li>Using the note's title, with a label: <a class="internal-link" href="/cats.html">link to the note about cats using the note title</a>
+</li>
+  <li>Using the note's filename, with a label: <a class="internal-link" href="/cats.html">link to the note about cats using the note's filename</a>
+</li>
+</ul>
+
+<p>In all cases, if the double-bracket link does not point to a valid note, the double brackets will still be shown, like this:<span title="There is no note that matches this link." class="invalid-link">
+  <span class="invalid-link-brackets">[[</span>
+  there is no note that matches this link
+  <span class="invalid-link-brackets">]]</span></span>.</p>
+
+<p>Alternatively, you can use regular <a href="https://www.markdownguide.org/getting-started/" target="blank">Markdown syntax</a> for links.</p>
+
+<p>Since the Web is all about HTML, you can always use plain HTML if you want, like this: <a class="internal-link" href="/cats.html">This is a link to the note about cats with HTML</a>. Don't forget to use the <code class="language-plaintext highlighter-rouge">.internal-link</code> class to make sure the link is styled as an internal link (without the little arrow).</p>
+
+<p>Of course, you can also link to external websites, like this: <a href="https://wikipedia.org/" target="blank">this is a link to Wikipedia</a>. Again, you can use plain HTML if you prefer. Footnotes are also supported and will be treated like internal links.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote" target="blank">1</a></sup></p>
+
+<h3 id="site-configuration">Site configuration</h3>
+
+<p>Some behavior is configurable by tweaking the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">favicon</code></strong>: Insert an emoji and this will be generated as your site's favicon automatically! This is only supported by browsers that recognize svg favicons, which is the majority of modern browsers.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">use_html_extension</code></strong>: if you use a static host that doesn't support URLs that don't end with <code class="language-plaintext highlighter-rouge">.html</code> (such as Neocities or Dreamhost), leave this as <code class="language-plaintext highlighter-rouge">true</code> in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file. If you configure your <code class="language-plaintext highlighter-rouge">.htaccess</code> to remove extensions, remember to add <code class="language-plaintext highlighter-rouge">link</code> metadata for canonical URLs.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">open_external_links_in_new_tab</code></strong>: when set to <code class="language-plaintext highlighter-rouge">true</code>, this makes external links open in new tabs. Set to <code class="language-plaintext highlighter-rouge">false</code> to open all links in the current tab.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">url</code></strong>: Set to your full web URL including <code class="language-plaintext highlighter-rouge">https://</code></p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">timezone</code></strong>: Set to your desired posting timezone so that the Last Modified At plugin displays the right date when you edit files.</p>
+
+<h3 id="pages">Pages</h3>
+<p>Save static pages in the root directory in <code class="language-plaintext highlighter-rouge">.md</code> format. Each page needs to have the following at the top:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: page
+title: About
+---
+</code></pre></div></div>
+
+<h3 id="automatic-bi-directional-links">Automatic bi-directional links</h3>
+
+<p>Notice in the "Notes mentioning this note" section that there is another note linking to this note. This is a bi-directional link, and those are automatically created when you create links to other notes.</p>
+
+<h3 id="link-previews">Link previews</h3>
+
+<p>If you're on a device with mouse support, try hovering your mouse on internal links to preview the notes: <a class="internal-link" href="/cats.html">a note about cats</a>.</p>
+
+<h3 id="images-and-other-markdown-goodies">Images and other Markdown goodies</h3>
+
+<p>Finally, because you have the full power of Markdown in this template, you can use regular Markdown syntax for various formatting options.</p>
+
+<p>Lists work as expected:</p>
+
+<ul>
+  <li>List element A</li>
+  <li>List element B</li>
+  <li>List element C</li>
+</ul>
+
+<ol>
+  <li>List element</li>
+  <li>List element</li>
+  <li>List element</li>
+</ol>
+
+<p>If you'd like to quote other people, consider using quote blocks:</p>
+
+<blockquote>
+  <p>Lorem ipsum dolor sit amet</p>
+</blockquote>
+
+<p>And of course, images look great:</p>
+
+<p><img src="assets/images/image.jpg" alt="assets/images/image.jpg"></p>
+
+<h3 id="code-syntax-highlighting">Code syntax highlighting</h3>
+
+<p>You can add code blocks with full syntax color highlighting by wrapping code snippet in triple backticks and specifying the type of the code (<code class="language-plaintext highlighter-rouge">js</code>, <code class="language-plaintext highlighter-rouge">rb</code>, <code class="language-plaintext highlighter-rouge">sh</code>, etc.):</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Here's a bit of JavaScript:</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello!</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># And now some Ruby</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+  <span class="s2">"baz"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> /dev/urandom | <span class="nb">grep</span> <span class="s2">"the answer to life"</span> <span class="c"># shell scripts look nice too</span>
+</code></pre></div></div>
+
+<h3 id="archive">Archive</h3>
+<p>The <a class="internal-link" href="/archive.html">archive</a> page displays all notes in reverse chronological order. Design is inspired by https://maximevaillancourt.com/blog.</p>
+
+<p>Archive page includes:</p>
+<ul>
+  <li>Note title with link to note</li>
+  <li>Note category</li>
+  <li>Month and Year modified</li>
+  <li>Excerpt</li>
+</ul>
+
+<h1 id="installation">Installation</h1>
+<ol>
+  <li>Create new respository from the <a href="https://github.com/meewgumi/digital-garden-apache-template" target="blank">Github Template</a> by clicking "Use this template"</li>
+  <li>Customize <code class="language-plaintext highlighter-rouge">_config.yml</code>
+</li>
+  <li>Sign up for <a href="https://www.deployhq.com/r/nx7qct" target="blank">DeployHQ</a>
+</li>
+  <li>Connect Github repository to DeployHQ</li>
+  <li>Add your server's FTP or SSH information</li>
+  <li>Configure <a href="https://www.deployhq.com/guides/jekyll" target="blank">Jekyll Build Commands</a> on DeployHQ and turn <code class="language-plaintext highlighter-rouge">vendor</code> caching on</li>
+  <li>Deploy!</li>
+</ol>
+
+<p>Optional: <a class="internal-link" href="/obsidian-setup.html">Obsidian Setup</a></p>
+
+<h1 id="license">License</h1>
+<p>This digital garden template is free and open-source. It runs on Apache/PHP servers and the <a href="https://github.com/meewgumi/digital-garden-apache-template" target="blank">Github code is available here</a>. This version of the code was modified by <a href="https://megumi.co" target="blank">Megumi Tanaka</a> in 2021.</p>
+
+<p>Based on this <a href="https://github.com/maximevaillancourt/digital-garden-jekyll-template" target="blank">digital garden template</a>, running on <a href="https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll" target="blank">Netlify</a>, created by <a href="https://github.com/maximevaillancourt" target="blank">Maxime Vaillancourt</a>.  <a href="https://ko-fi.com/maximevaillancourt" target="blank">Buy the original creator a coffee</a>! ☕️</p>
+
+<p>Go forth, have fun, and learn new something every day! ✌️</p>
+
+<h1 id="footnotes">Footnotes</h1>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>This is a footnote. For more information about using footnotes, check out the <a href="https://www.markdownguide.org/extended-syntax/#footnotes" target="blank">Markdown Guide</a>. <a href="#fnref:1" class="reversefootnote" role="doc-backlink" target="blank">↩</a></p>
+    </li>
+  </ol>
+</div>
+</body></html>
+
+</article>
+<aside>
+  <h5>Notes mentioning this note</h5>
+  
+    
+    <div class="backlink-box">
+      <a class="internal-link" href="/site-organization.html">Site organization</a>
+      <p>Pages vs Notes Site content is separated into two main categories: Pages are static pages such as about.md, saved in...</p>
+    </div>
+    
+    <div class="backlink-box">
+      <a class="internal-link" href="/your-first-note.html">Your first seed</a>
+      <p>Welcome! This is your first note. You'll find it in the _notes/ directory. I recommend using Obsidian to edit Markdown...</p>
+    </div>
+    
+  
+</aside>
+<hr>
+<p><time datetime="2022-10-27T20:01:27-06:00">Last updated October 27, 2022</time></p>
+<!-- visual graph section
+<section></section>
+ -->
+</main>
+  <footer><p>This is the footer. Here's the <a class="internal-link" href="about.html">About</a> page and the <a class="internal-link" href="archive.html">Archive</a>.</p>
+</footer>
+
+  <!-- That file is not particularly elegant. This will need a refactor at some point. -->
+<style>
+  content a.internal-link {
+    border-color: #8b88e6;
+    background-color: #efefff;
+  }
+
+  #tooltip-wrapper {
+    background: white;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    font-size: 0.8em;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 100ms;
+  }
+
+  #tooltip-wrapper:after {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		pointer-events: none;
+		background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+		width: 100%;
+		height: 75px;
+  }
+</style>
+
+<div style="opacity: 0; display: none;" id='tooltip-wrapper'>
+  <div id='tooltip-content'>
+  </div>
+</div>
+
+<iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src="">
+</iframe>
+
+<script>
+  var opacityTimeout;
+  var contentTimeout;
+  var transitionDurationMs = 100;
+
+  var iframe = document.getElementById('link-preview-iframe')
+  var tooltipWrapper = document.getElementById('tooltip-wrapper')
+  var tooltipContent = document.getElementById('tooltip-content')
+
+  function hideTooltip() {
+    opacityTimeout = setTimeout(function() {
+      tooltipWrapper.style.opacity = 0;
+      contentTimeout = setTimeout(function() {
+        tooltipContent.innerHTML = '';
+        tooltipWrapper.style.display = 'none';
+      }, transitionDurationMs + 1);
+    }, transitionDurationMs)
+  }
+
+  function showTooltip(event) {
+    var elem = event.target;
+    var elem_props = elem.getClientRects()[elem.getClientRects().length - 1];
+    var top = window.pageYOffset || document.documentElement.scrollTop
+
+    if (event.target.host === window.location.host) {
+      iframe.src = event.target.href
+      iframe.onload = function() {
+        tooltipContentHtml = ''
+        tooltipContentHtml += '<div style="font-weight: bold;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
+        tooltipContentHtml += iframe.contentWindow.document.querySelector('content').innerHTML
+
+        tooltipContent.innerHTML = tooltipContentHtml
+
+        tooltipWrapper.style.display = 'block';
+        setTimeout(function() {
+          tooltipWrapper.style.opacity = 1;
+        }, 1)
+      }
+
+      tooltipWrapper.style.left = elem_props.left - (tooltipWrapper.offsetWidth / 2) + (elem_props.width / 2) + "px";
+      if ((window.innerHeight - elem_props.top) < (tooltipWrapper.offsetHeight)) {
+          tooltipWrapper.style.top = elem_props.top + top - tooltipWrapper.offsetHeight - 10 + "px";
+      } else if ((window.innerHeight - elem_props.top) > (tooltipWrapper.offsetHeight)) {
+          tooltipWrapper.style.top = elem_props.top + top + 35 + "px";
+      }
+
+      if ((elem_props.left + (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+          tooltipWrapper.style.left = "10px";
+      } else if ((document.body.clientWidth - elem_props.left - (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+          tooltipWrapper.style.left = document.body.clientWidth - tooltipWrapper.offsetWidth - 20 + "px";
+      }
+    }
+  }
+
+  function setupListeners(linkElement) {
+    linkElement.addEventListener('mouseleave', function(_event) {
+      hideTooltip();
+    });
+
+    tooltipWrapper.addEventListener('mouseleave', function(_event) {
+      hideTooltip();
+    });
+
+    linkElement.addEventListener('mouseenter', function(event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+      showTooltip(event);
+    });
+
+    tooltipWrapper.addEventListener('mouseenter', function(event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+    });
+  }
+
+  document.querySelectorAll('content a').forEach(setupListeners);
+</script>
+
+</body>
+
+</html>

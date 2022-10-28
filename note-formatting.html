@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Front MatterAt the top of each new note, you must include the triple dashes that make up Jekyll Front Matter.">
+
+  <meta property="og:site_name" content="Sparks in the Dark">
+
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥬</text></svg>">
+  
+
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  
+  <meta property="og:description" content="Front MatterAt the top of each new note, you must include the triple dashes that make up Jekyll Front Matter.">
+  
+
+  
+  <meta property="og:title" content="Note formatting">
+  <meta property="og:type" content="article">
+  
+
+  
+  <meta property="article:published_time" content="2022-10-27T21:12:50-06:00">
+  <meta property="article:author" content="https://garden.megu.space/">
+  
+
+  
+  <meta property="og:url" content="https://garden.megu.space/note-formatting.html">
+  
+
+  
+
+  <title>
+    
+    Note formatting &mdash; Sparks in the Dark
+    
+  </title>
+</head>
+
+
+<body>
+  <nav><div>
+<!-- Header added by GSW from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_responsive_header -->
+<div class="header">
+  <a href="#default" class="logo">CompanyLogo</a>
+  <div class="header-right">
+    <a class="active" href="index.html">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+  <a class="internal-link" href="/"><b>Sparks in the Dark</b></a>
+</div></nav>
+  <main><article>
+    <h1>Note formatting</h1>
+    <header><p><time datetime="2022-10-26T15:28:59-06:00">Last updated October 26, 2022</time> &ndash; Getting Started</p></header>
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h2 id="front-matter">Front Matter</h2>
+<p>At the top of each new note, you must include the triple dashes that make up <a href="https://jekyllrb.com/docs/front-matter/" target="blank">Jekyll Front Matter</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+---
+</code></pre></div></div>
+
+<p>If you forget to add this to a note, it's no big deal! Maxime wrote a plugin called <code class="language-plaintext highlighter-rouge">empty_front_matter_note_injector.rb</code> which adds these dashes before building the site.</p>
+
+<h2 id="note-title">Note Title</h2>
+<p>The title of the <code class="language-plaintext highlighter-rouge">.md</code> file will automatically become the note title heading, rendered as an <code class="language-plaintext highlighter-rouge">&lt;h1&gt;</code>. Keeping this in mind, start your note content from <code class="language-plaintext highlighter-rouge">&lt;h2&gt;</code> or <code class="language-plaintext highlighter-rouge">##</code>.</p>
+
+<h3 id="title-override">Title Override</h3>
+<p>Use variable <code class="language-plaintext highlighter-rouge">title:</code> in the front matter to create a note title that is different from the filename.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: A note about cats
+---
+</code></pre></div></div>
+
+<p>In the example above, the filename is <code class="language-plaintext highlighter-rouge">cats.md</code> but the longer title shows up in the note's heading and <code class="language-plaintext highlighter-rouge">&lt;title&gt;</code>. See it live at <a class="internal-link" href="/cats.html">cats</a>.</p>
+
+<h2 id="categories">Categories</h2>
+<p>To add a category, add the following to your note front matter:</p>
+
+<p><code class="language-plaintext highlighter-rouge">category: Cats</code></p>
+
+<p>The <a class="internal-link" href="/archive.html">archive</a> page automatically displays all notes and their categories (if any). Categories display underneath note title, if they are not null. Eventually I want to make these clickable. Inspired by <a href="https://solar.lowtechmagazine.com/archives.html" target="blank">Low Tech Mag's Archive Page</a>.</p>
+
+<h2 id="favicon">Favicon</h2>
+<p>To override the site favicon on a page level basis, use this variable:</p>
+
+<p><code class="language-plaintext highlighter-rouge">favicon: 🐈</code></p>
+
+<p>Type an emoji directly in your <code class="language-plaintext highlighter-rouge">.md</code> file and it will replace your favicon for that page only!</p>
+
+<h2 id="internal-links">Internal Links</h2>
+<p>By default, all links created with <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> will show up as external links, open in new window, and display a small arrow.</p>
+
+<p>For internal links, add <code class="language-plaintext highlighter-rouge">class="internal-link"</code> to the HTML.</p>
+
+<p>Unfortunately, <code class="language-plaintext highlighter-rouge">{: .internal-link}</code> stopped working when I switched to Commonmark.</p>
+
+<h2 id="github-flavored-markdown">Github Flavored Markdown</h2>
+<p>~<del>This site uses <a href="https://github.com/github/jekyll-commonmark-ghpages" target="blank">Commonmark Github Flavored Markdown</a>, which replaces the default Kramdown functionality. Read the <a href="https://github.github.com/gfm/" target="blank">Github Markdown Documentation</a>.</del>~</p>
+
+<p>Deleted Commonmark due to some conflicting dependencies. Back to Kramdown now. Will troubleshoot later.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>foo</th>
+      <th>bar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>baz</td>
+      <td><a class="internal-link" href="/cats.html">cats</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The table above was created with this markup:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| foo | bar |
+| --- | --- |
+| baz | [[cats]] |
+</code></pre></div></div>
+
+<p>More info in the <a href="https://github.github.com/gfm/#tables-extension-" target="blank">GFM Documentation</a></p>
+
+<p>Other options you can add to Commonmark in <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Valid options: DEFAULT, VALIDATE_UTF8, SMART, LIBERAL_HTML_TAG, FOOTNOTES, STRIKETHROUGH_DOUBLE_TILDE, SOURCEPOS, HARDBREAKS, SAFE, NOBREAKS, GITHUB_PRE_LANG, TABLE_PREFER_STYLE_ATTRIBUTES, FULL_INFO_STRING
+</code></pre></div></div>
+
+<p>Note that an inline code block created with ` <code class="language-plaintext highlighter-rouge">` has text wrapping, while preformatted blocks created with `</code><code class="language-plaintext highlighter-rouge"> </code> do not.</p>
+
+<p>Description of each option <a href="https://github.com/gjtorikian/commonmarker#options" target="blank">here</a></p>
+
+<h2 id="typographic-symbols">Typographic Symbols</h2>
+<p>"Smart" quotes are automatically generated with Commonmark, but the typographic options are documented in <a href="https://kramdown.gettalong.org/syntax.html#typographic-symbols" target="blank">Kramdown</a>, the built in Jekyll Markdown parser.</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">---</code> will become an em-dash (like this —)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">--</code> will become an en-dash (like this –)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">...</code> will become an ellipsis (like this …)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">&lt;&lt;</code> will become a left guillemet (like this «) – an optional following space will become a non-breakable space</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">&gt;&gt;</code> will become a right guillemet (like this ») – an optional leading space will become a non-breakable space</li>
+</ul>
+
+<h2 id="footnotes">Footnotes</h2>
+<p>If you create footnotes, you'll need to add a heading for Footnotes at the bottom of your note manually (for now)</p>
+</body></html>
+
+</article>
+<aside>
+  <h5>Notes mentioning this note</h5>
+  
+    
+    <div class="backlink-box">
+      <a class="internal-link" href="/site-organization.html">Site organization</a>
+      <p>Pages vs Notes Site content is separated into two main categories: Pages are static pages such as about.md, saved in...</p>
+    </div>
+    
+    <div class="backlink-box">
+      <a class="internal-link" href="/cats.html">A note about cats</a>
+      <p>This is a second note with a poem with cats.
+</p>
+    </div>
+    
+    <div class="backlink-box">
+      <a class="internal-link" href="/your-first-note.html">Your first seed</a>
+      <p>Welcome! This is your first note. You'll find it in the _notes/ directory. I recommend using Obsidian to edit Markdown...</p>
+    </div>
+    
+  
+</aside>
+<hr>
+<p><time datetime="2022-10-26T15:28:59-06:00">Last updated October 26, 2022</time></p>
+<!-- visual graph section
+<section></section>
+ -->
+</main>
+  <footer><p>This is the footer. Here's the <a class="internal-link" href="about.html">About</a> page and the <a class="internal-link" href="archive.html">Archive</a>.</p>
+</footer>
+
+  <!-- That file is not particularly elegant. This will need a refactor at some point. -->
+<style>
+  content a.internal-link {
+    border-color: #8b88e6;
+    background-color: #efefff;
+  }
+
+  #tooltip-wrapper {
+    background: white;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    font-size: 0.8em;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 100ms;
+  }
+
+  #tooltip-wrapper:after {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		pointer-events: none;
+		background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+		width: 100%;
+		height: 75px;
+  }
+</style>
+
+<div style="opacity: 0; display: none;" id='tooltip-wrapper'>
+  <div id='tooltip-content'>
+  </div>
+</div>
+
+<iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src="">
+</iframe>
+
+<script>
+  var opacityTimeout;
+  var contentTimeout;
+  var transitionDurationMs = 100;
+
+  var iframe = document.getElementById('link-preview-iframe')
+  var tooltipWrapper = document.getElementById('tooltip-wrapper')
+  var tooltipContent = document.getElementById('tooltip-content')
+
+  function hideTooltip() {
+    opacityTimeout = setTimeout(function() {
+      tooltipWrapper.style.opacity = 0;
+      contentTimeout = setTimeout(function() {
+        tooltipContent.innerHTML = '';
+        tooltipWrapper.style.display = 'none';
+      }, transitionDurationMs + 1);
+    }, transitionDurationMs)
+  }
+
+  function showTooltip(event) {
+    var elem = event.target;
+    var elem_props = elem.getClientRects()[elem.getClientRects().length - 1];
+    var top = window.pageYOffset || document.documentElement.scrollTop
+
+    if (event.target.host === window.location.host) {
+      iframe.src = event.target.href
+      iframe.onload = function() {
+        tooltipContentHtml = ''
+        tooltipContentHtml += '<div style="font-weight: bold;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
+        tooltipContentHtml += iframe.contentWindow.document.querySelector('content').innerHTML
+
+        tooltipContent.innerHTML = tooltipContentHtml
+
+        tooltipWrapper.style.display = 'block';
+        setTimeout(function() {
+          tooltipWrapper.style.opacity = 1;
+        }, 1)
+      }
+
+      tooltipWrapper.style.left = elem_props.left - (tooltipWrapper.offsetWidth / 2) + (elem_props.width / 2) + "px";
+      if ((window.innerHeight - elem_props.top) < (tooltipWrapper.offsetHeight)) {
+          tooltipWrapper.style.top = elem_props.top + top - tooltipWrapper.offsetHeight - 10 + "px";
+      } else if ((window.innerHeight - elem_props.top) > (tooltipWrapper.offsetHeight)) {
+          tooltipWrapper.style.top = elem_props.top + top + 35 + "px";
+      }
+
+      if ((elem_props.left + (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+          tooltipWrapper.style.left = "10px";
+      } else if ((document.body.clientWidth - elem_props.left - (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+          tooltipWrapper.style.left = document.body.clientWidth - tooltipWrapper.offsetWidth - 20 + "px";
+      }
+    }
+  }
+
+  function setupListeners(linkElement) {
+    linkElement.addEventListener('mouseleave', function(_event) {
+      hideTooltip();
+    });
+
+    tooltipWrapper.addEventListener('mouseleave', function(_event) {
+      hideTooltip();
+    });
+
+    linkElement.addEventListener('mouseenter', function(event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+      showTooltip(event);
+    });
+
+    tooltipWrapper.addEventListener('mouseenter', function(event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+    });
+  }
+
+  document.querySelectorAll('content a').forEach(setupListeners);
+</script>
+
+</body>
+
+</html>
